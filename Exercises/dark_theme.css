@@ -1,0 +1,14 @@
+body {
+    background-color: rgb(29, 26, 26);
+    color: white;
+    font-family: serif;
+}
+
+a {
+    color: bisque;
+}
+
+a:visited {
+    color: beige;
+}
+
