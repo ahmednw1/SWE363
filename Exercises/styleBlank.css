@@ -15,6 +15,7 @@ a {
     background-color: red;
 }
 
+
 em {
     background-color: blue;
 }
@@ -25,7 +26,60 @@ em {
 
 }
 
-h2{
-    font-family: sans-serif ;
+h2 {
+    font-family: sans-serif;
 }
 
+h2+p::first-letter {
+    font-size: x-large;
+}
+
+tr:hover {
+    background-color: lightskyblue;
+}
+
+tr:hover td {
+    background-color: lightskyblue;
+}
+
+nav li {
+    display: inline;
+}
+
+a {
+    text-decoration: none;
+}
+
+nav li:first-child a {
+    text-decoration: underline;
+}
+
+::selection {
+    color: white;
+    background-color: darkgoldenrod;
+}
+
+body a:hover {
+    cursor: pointer;
+}
+
+input {
+    height: 20px;
+}
+
+input[type="text"] {
+    border-color: lightgray;
+}
+
+input[name="message"] {
+    height: 50px;
+}
+
+/* ChatGPT Helped on this */
+tbody tr:nth-child(even) {
+    background-color: aquamarine;
+}
+
+tbody tr:nth-child(odd) {
+    background-color: aqua;
+}
