@@ -1,23 +1,28 @@
 h1,
 h2,
 h3 {
-    color: #19191B;
+    width: 388px;
+    height: 80px;
+    color: #201C44;
     font-family: DM Sans;
-    font-size: 80px;
+    font-size: 38px;
     font-style: normal;
     font-weight: 700;
-    line-height: 77px;
-    letter-spacing: -2.501px;
+    line-height: 120%;
 }
 
 p {
-    color: #696871;
+    color: #000;
     font-family: Mulish;
-    font-size: 20px;
+    font-size: 16px;
     font-style: normal;
     font-weight: 400;
-    line-height: 30px;
-    letter-spacing: -0.625px;
+}
+
+img {
+    width: 349.009px;
+    height: 359.646px;
+    flex-shrink: 0;
 }
 
 a {
@@ -30,23 +35,14 @@ a {
     letter-spacing: -0.531px;
 }
 
-button {
-    border-radius: 10px;
-    background: #5454D4;
-    transition: background-color 0.3s ease;
-
-}
-
-button:hover {
-    background-color: cornflowerblue;
-}
-
+button,
 input[type="submit"] {
     border-radius: 10px;
     background: #5454D4;
     transition: background-color 0.3s ease;
 }
 
+button:hover,
 input[type="submit"]:hover {
     background-color: cornflowerblue;
 }
@@ -55,51 +51,44 @@ li {
     color: #19191B;
     text-align: center;
     font-family: DM Sans;
-    font-size: 24px;
+    font-size: 16px;
     font-style: normal;
     font-weight: 700;
-    line-height: 36px;
-    letter-spacing: -0.75px;
+    line-height: 1.5;
+    letter-spacing: -0.5px;
 }
 
-
-ul  {
+ul {
     list-style: none;
     padding: 0;
     margin: 0;
     display: flex;
+    flex-wrap: wrap;
     gap: 10px;
-    flex-direction: row;
-    justify-content: left;
+    justify-content: center;
 }
-
-
 
 ul li div {
-    width: 35px;
-    height: 5px;
+    width: 25px;
+    height: 3px;
     background-color: black;
-    margin: 6px 0;
+    margin: 3px 0;
 }
-
 
 .content {
     animation: page 5s forwards;
 }
 
-
 .loading {
-
     background-color: black;
-    width: 100px;;
-    height:100px;
+    width: 60px;
+    height: 60px;
     position: absolute;
     top: 150px;
-    left: 350px;
+    left: 50%;
+    transform: translateX(-50%);
     border-radius: 50%;
     animation: shrink 0.6s 0.2s ease-in-out infinite alternate, loading 5s forwards;
-
-
 }
 
 @keyframes shrink {
@@ -116,13 +105,11 @@ ul li div {
     0% {
         opacity: 1;
         display: block;
-
     }
 
     100% {
         opacity: 0;
         display: none;
-
     }
 }
 

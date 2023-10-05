@@ -1,0 +1,151 @@
+h1,
+h2,
+h3 {
+    color: #19191B;
+    font-family: DM Sans;
+    font-size: 80px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 77px;
+    letter-spacing: -2.501px;
+}
+
+section{
+    display: flex;
+}
+p {
+    color: #696871;
+    font-family: Mulish;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 30px;
+    letter-spacing: -0.625px;
+    
+
+}
+
+img {
+    width: 590px;
+    height: 607.981px;
+    flex-shrink: 0;
+}
+
+a {
+    color: #5454D4;
+    font-family: DM Sans;
+    font-size: 17px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: -0.531px;
+}
+
+button {
+    border-radius: 10px;
+    background: #5454D4;
+    transition: background-color 0.3s ease;
+
+}
+
+button:hover {
+    background-color: cornflowerblue;
+}
+
+input[type="submit"] {
+    border-radius: 10px;
+    background: #5454D4;
+    transition: background-color 0.3s ease;
+}
+
+input[type="submit"]:hover {
+    background-color: cornflowerblue;
+}
+
+li {
+    color: #19191B;
+    text-align: center;
+    font-family: DM Sans;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 36px;
+    letter-spacing: -0.75px;
+}
+
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 10px;
+    flex-direction: row;
+    justify-content: left;
+}
+
+
+
+ul li div {
+    width: 35px;
+    height: 5px;
+    background-color: black;
+    margin: 6px 0;
+}
+
+
+.content {
+    animation: page 5s forwards;
+}
+
+
+.loading {
+
+    background-color: black;
+    width: 100px;
+    ;
+    height: 100px;
+    position: absolute;
+    top: 150px;
+    left: 350px;
+    border-radius: 50%;
+    animation: shrink 0.6s 0.2s ease-in-out infinite alternate, loading 5s forwards;
+
+
+}
+
+@keyframes shrink {
+    0% {
+        transform: scale(1);
+    }
+
+    100% {
+        transform: scale(0.2);
+    }
+}
+
+@keyframes loading {
+    0% {
+        opacity: 1;
+        display: block;
+
+    }
+
+    100% {
+        opacity: 0;
+        display: none;
+
+    }
+}
+
+@keyframes page {
+    0% {
+        opacity: 0;
+        display: none;
+    }
+
+    100% {
+        opacity: 1;
+        display: block;
+    }
+}
