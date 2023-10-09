@@ -149,6 +149,14 @@
             turn = 'X';
             document.querySelector("#turn span").textContent = turn;
         }
+        
+        function handleKeyPress(event) {
+            if (!gameEnded) {
+                if (event.key === "Enter" || event.key === " ") {
+                    cellClicked(event.target);
+                }
+            }
+        }
     </script>
 </body>
 
