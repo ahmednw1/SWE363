@@ -62,6 +62,25 @@
             <a href="arabicVersion/home-ar.html">Change to arabic</a>
         </footer>
     </div>
+    <script>
+        window.addEventListener("keydown", function (event) {
+            navigate(event);
+        });
+
+        function navigate(event) {
+            switch (event.keyCode) {
+                case 37: // Left arrow key
+                    window.location.href = './services.html';
+                    break;
+
+                case 39: // Right arrow key
+                    window.location.href = './contactUs.html';
+                    break;
+            }
+        }
+    </script>
+
+
 </body>
 
 </html>
