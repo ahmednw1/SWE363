@@ -19,10 +19,20 @@
     <link
         href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;0,9..40,1000;1,9..40,100&display=swap"
         rel="stylesheet">
+    <script src="three.min.js"></script>
+    <style>
+        canvas{
+            display: none;
+        }
+        .body{
+            display: block;
+        }
+    </style>
+    
     <title> Visonry </title>
 </head>
 
-<body>
+<body class="body">
     <div class="loading"></div>
     <div class="content">
 
@@ -52,8 +62,8 @@
 
                 <img src="../assets/data.jpeg">
             </section>
-
         </main>
+
 
 
 
@@ -62,6 +72,31 @@
             <a href="arabicVersion/home-ar.html">Change to arabic</a>
         </footer>
     </div>
+    <script>
+        let inactivityTimer;
+        const inactivityThreshold = 600000;
+
+        // Function to reset the inactivity timer
+        const resetInactivityTimer = () => {
+            clearTimeout(inactivityTimer);
+            inactivityTimer = setTimeout(() => {
+                // Show the screensaver
+                content = document.getElementsByClassName('body');
+                content.className = 'display:none';
+                threeD = document.getElementsByClassName('3D');
+                threeD.className = 'display:block';
+            }, inactivityThreshold);
+        };
+
+        // Event listeners to reset the timer on user activity
+        window.addEventListener('mousemove', resetInactivityTimer);
+        window.addEventListener('keydown', resetInactivityTimer);
+
+        // Initial start of the timer
+        resetInactivityTimer();
+
+    </script>
+
     <script>
         window.addEventListener("keydown", function (event) {
             navigate(event);
@@ -82,5 +117,67 @@
 
 
 </body>
+
+<script class="threeD">
+    //Setup
+
+    //scene
+    const scene = new THREE.Scene()
+
+    //camera
+    const camera = new THREE.PerspectiveCamera();
+    camera.position.z = 20;
+
+    //rendered
+    const renderer = new THREE.WebGLRenderer();
+    renderer.setSize(window.innerWidth, window.innerHeight)
+    document.body.appendChild(renderer.domElement)
+
+    //light
+    const light = new THREE.AmbientLight("rgb(255,255,255)"); // soft white light
+    light.intensity = 1;
+    scene.add(light);
+
+    //obj 1
+    let obj1;
+    const geometry1 = new THREE.TorusKnotGeometry();
+    const material1 = new THREE.MeshNormalMaterial();
+    obj1 = new THREE.Mesh(geometry1, material1);
+    obj1.position.x = -2;
+    scene.add(obj1);
+
+    //obj 2
+    let obj2;
+    const geometry2 = new THREE.TorusKnotGeometry();
+    const material2 = new THREE.MeshToonMaterial();
+    material2.color = new THREE.Color("rgb(255,0,0)")
+    material2.shadowSide = THREE.DoubleSide;
+    material2.side = THREE.DoubleSide;
+    obj2 = new THREE.Mesh(geometry2, material2);
+    obj2.position.x = 2;
+    material2.castShadow = true;
+    material2.receiveShadow = true;
+    scene.add(obj2);
+
+    //light2
+    const light2 = new THREE.DirectionalLight(0xffffff, 1);
+    light2.castShadow = true;
+    light2.target = obj2;
+    scene.add(light2);
+
+    function draw() {
+        //random hex value for color 
+        obj1.rotation.x += 0.01
+        obj1.rotation.y += 0.02
+
+        obj2.rotation.x += 0.02
+        obj2.rotation.y -= 0.01
+
+        renderer.render(scene, camera);
+        requestAnimationFrame(draw)
+    }
+
+    draw()
+</script>
 
 </html>
