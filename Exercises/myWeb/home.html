@@ -21,14 +21,15 @@
         rel="stylesheet">
     <script src="three.min.js"></script>
     <style>
-        canvas{
+        canvas {
             display: none;
         }
-        .body{
+
+        .body {
             display: block;
         }
     </style>
-    
+
     <title> Visonry </title>
 </head>
 
@@ -98,11 +99,7 @@
     </script>
 
     <script>
-        window.addEventListener("keydown", function (event) {
-            navigate(event);
-        });
-
-        function navigate(event) {
+        window.addEventListener("keydown", (e) => {
             switch (event.keyCode) {
                 case 37: // Left arrow key
                     window.location.href = './services.html';
@@ -112,7 +109,7 @@
                     window.location.href = './contactUs.html';
                     break;
             }
-        }
+        });
     </script>
 
 

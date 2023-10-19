@@ -49,36 +49,35 @@
         const context = canvas.getContext("2d");
         let isDrawing = false;
         canvas.style = "background-color: blue;"
-        
-        canvas.addEventListener("mousedown", (e) => {
+
+
+        //Function expression 
+        canvas.addEventListener("mousedown", e => {
             isDrawing = true;
             context.beginPath();
             context.moveTo(e.clientX - canvas.getBoundingClientRect().left, e.clientY - canvas.getBoundingClientRect().top);
         });
         
-        canvas.addEventListener("mousemove", (e) => {
+        canvas.addEventListener("mousemove", e => {
             if (!isDrawing) return;
             context.lineTo(e.clientX - canvas.getBoundingClientRect().left, e.clientY - canvas.getBoundingClientRect().top);
             context.stroke();
         });
         
-        canvas.addEventListener("mouseup", () => {
-            isDrawing = false;
-        });
+        canvas.addEventListener("mouseup", () => isDrawing = false);
         
-        canvas.addEventListener("mouseout", () => {
-            isDrawing = false;
-        });
+        canvas.addEventListener("mouseout", () => isDrawing = false);
         
         const clearButton = document.getElementById("clearButton");
-        clearButton.addEventListener("click", () => {
-            context.clearRect(0, 0, canvas.width, canvas.height);
-        });
+
+        clearButton.addEventListener("click", () => 
+            context.clearRect(0, 0, canvas.width, canvas.height)
+        );
         
         const signatureImage = document.getElementById("signatureImage");
         
         const signatureForm = document.getElementById("signatureForm");
-        signatureForm.addEventListener("submit", function (e) {
+        signatureForm.addEventListener("submit",  e => {
             e.preventDefault();
             
             const signatureDataURL = canvas.toDataURL();
@@ -86,8 +85,6 @@
             
             signatureImage.style.display = "block";
         });
-
-
     </script>
 
 </body>
