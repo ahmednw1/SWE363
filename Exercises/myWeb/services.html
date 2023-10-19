@@ -19,7 +19,7 @@
             <ul>
                 <li> Intreviews </li>
                 <li> Focus Groups </li>
-                <li> Serveies </li>
+                <li> Survies </li>
 
             </ul>
         </p>
@@ -44,42 +44,49 @@
         <tbody>
             <!-- First row -->
             <tr>
-                <td>
-                    Intreviews
-                </td>
-                <td>
-                    One-one meeting to qution the candinante
-                </td>
-                <td>
-                    5-10
-                </td>
+               
             </tr>
             <!-- Second row -->
             <tr>
-                <td>
-                    Foucs Groups
-                </td>
-                <td>
-                    Mulitable people gathered to answer and discuss cetian things
-                </td>
-                <td>
-                    5-10
-                </td>
+               
             </tr>
             <!-- Third row -->
             <tr>
-                <td>
-                    Survies
-                </td>
-                <td>
-                    Multiable quetions asked to candinate and answered online
-                </td>
-                <td>
-                    50-100
-                </td>
+             
             </tr>
         </tbody>
     </table>
+    <script>
+        class Prodcut{
+            constructor(type,description,people){
+                this.type = type;
+                this.description = description;
+                this.people = people;
+            }
+        }
+
+        products = [new Prodcut("Intreview",
+        "One-one meeting to qution the candinante","5-10"),
+        new Prodcut("Foucs Groups","Mulitable people gathered to answer and discuss cetian things",
+        "5-10"), new Prodcut("Survies","Multiable quetions asked to candinate and answered online",
+        "50-100")
+        ]
+
+        tableRow = document.querySelectorAll("tbody tr");
+        count = 0;
+        for(product of products){
+            tableRow[count].innerHTML = `<td>
+                ${product.type}
+                </td>
+                <td>
+                    ${product.description}
+                </td>
+                <td>
+                    ${product.people}
+                </td>`
+            count++;
+        }
+    </script>
 
 </body>
 
