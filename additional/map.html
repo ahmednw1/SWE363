@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        //The map/fillter/reduce functions are not applicple in my web
+        //I will try the functions here
+
+        function multilplyBy3(number){
+            return number*3;
+        }
+
+        numbers = [2,3,4]
+
+        //Map function
+        numbersMultiplyBy3 = numbers.map(multilplyBy3);
+
+        //Reduce functio
+        numbersAddition = numbers.reduce((a,b)=>a+b);
+
+        //Fileter function
+        smallNunmers = numbers.filter((a)=> a<=2)
+    </script>
+</body>
+</html>
