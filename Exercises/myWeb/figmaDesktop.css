@@ -73,6 +73,12 @@ li {
     letter-spacing: -0.75px;
 }
 
+li a {
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.4s linear;
+}
+
 
 ul {
     list-style: none;
@@ -84,9 +90,25 @@ ul {
     justify-content: left;
 }
 
+.hum:hover  ~ li a {
+    visibility: visible;
+    opacity: 1;
+
+}
+
+li a:nth-child(1){
+    transition-delay: 0.3s;
+}
+li a:nth-child(2){
+    transition-delay: 0.1s;
+}
 
 
-ul li div {
+.hum{
+    display: inline;
+}
+
+.hum div{
     width: 35px;
     height: 5px;
     background-color: black;
@@ -100,14 +122,12 @@ ul li div {
 
 
 .loading {
-
     background-color: black;
-    width: 100px;
-    ;
+    width: 100px;;
     height: 100px;
     position: absolute;
-    top: 150px;
-    left: 350px;
+    top: 250px;
+    left: 500px;
     border-radius: 50%;
     animation: shrink 0.6s 0.2s ease-in-out infinite alternate, loading 5s forwards;
 
