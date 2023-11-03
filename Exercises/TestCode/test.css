@@ -1,0 +1,21 @@
+ nav + table tbody tr:first-child{
+    background-color: red;
+    text-decoration:solid;
+}
+
+header:hover > table tbody tr:first-child{
+    background-color: aquamarine;
+}
+
+header{
+    animation: ani 2s ease-in forwards;
+}
+@keyframes ani{
+    0%{
+       font-size: small;
+    }
+    100%{
+        font-size: large;
+    }
+
+    }
