@@ -7,9 +7,9 @@
     <meta name="author" content="Ahmed Al-Mughyirah">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <link rel="stylesheet" href="figmaMobile.css" media="(max-width: 767px)">
+    <link rel="stylesheet" href="public/figmaMobile.css" media="(max-width: 767px)">
 
-    <link rel="stylesheet" href="figmaDesktop.css" media="(min-width: 768px)">
+    <link rel="stylesheet" href="public/figmaDesktop.css" media="(min-width: 768px)">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -41,8 +41,8 @@
                     <div></div>
                     <div></div>
                 </div>
-                <li><a href="./services.html">Our Services</a></li>
-                <li><a href="./contactUs.html">Contact Us</a></li>
+                <li><a href="/services">Our Services</a></li>
+                <li><a href="/contactUs">Contact Us</a></li>
             </ul>
 
 
@@ -78,11 +78,11 @@
         window.addEventListener("keydown", (e) => {
             switch (event.keyCode) {
                 case 37: // Left arrow key
-                    window.location.href = './services.html';
+                    window.location.href = '/services';
                     break;
 
                 case 39: // Right arrow key
-                    window.location.href = './contactUs.html';
+                    window.location.href = '/contactUs';
                     break;
             }
         });
